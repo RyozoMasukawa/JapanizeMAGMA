@@ -19,7 +19,6 @@ class MagmaMonteCarloSimulator:
         self.tagger = MeCab.Tagger("-Owakati")
         self.batch_size = batch_size
         
-    #MAGMAモンテカルロシミュレーションを行い、各服のトップn番目のtfidfを持つ単語をリストアップ
     def get_result(self, prompt : str, top_n:int=50, sim_step:int=100, need_captions:bool=False):
         df_item_caption = self.__simulate_magma(prompt, sim_step=sim_step)
         whole_word_list, word_sets, bows, big_bow = self.__get_document_info(df_item_caption) 
@@ -174,7 +173,7 @@ class MagmaMonteCarloSimulator:
                     tfidf[(i, j)] = 0
         return tfidf
     
-    #各服のデスクリプションの各単語とそのtfidfのペアのリストを得る関数
+    #各デスクリプションの各単語とそのtfidfのペアのリストを得る関数
     def __get_each_feature(self, tfidf, bows, whole_word_list):
         tf_idf_each_doc = []
         for j, bow in enumerate(bows):
