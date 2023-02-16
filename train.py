@@ -81,8 +81,12 @@ if __name__ == "__main__":
     #     args.config
     # )  # for finetuning one might want to load the model via Magma.from_checkpoint(...) here
     model = Magma.from_checkpoint(
+        #TODO
+        #自分のコンフィグファイルへ変更してください
         config_path = "configs/MAGMA_qa_rigorous.yml",
         #CHANGED from "./mp_rank_00_model_states.pt"
+        #TODO
+        #ここをご自分のチェックポイントへ変更してください
         checkpoint_path = "./checkpoints/multimodal_transformer_rn50x16/global_step1000_backup/mp_rank_00_model_states.pt",
         device='cuda:0'
     )
