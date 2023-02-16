@@ -23,6 +23,3 @@ if __name__ == "__main__":
 ```.bash
 deepspeed train.py --config path_to_my_config
 ```
-
-
-アナハイムはやりやがったってことだ
